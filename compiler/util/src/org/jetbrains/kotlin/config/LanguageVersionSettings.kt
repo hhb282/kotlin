@@ -62,6 +62,7 @@ enum class LanguageFeature(
     CallableReferencesToClassMembersWithEmptyLHS(KOTLIN_1_2),
 
     RestrictionOfValReassignmentViaBackingField(KOTLIN_1_3),
+    RestrictionOfWrongAnnotationsWithUseSiteTargetsOnTypes(KOTLIN_1_3),
 
     // Experimental features
 

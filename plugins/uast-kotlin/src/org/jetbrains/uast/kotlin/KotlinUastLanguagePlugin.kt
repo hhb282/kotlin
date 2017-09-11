@@ -72,7 +72,9 @@ class KotlinUastLanguagePlugin : UastLanguagePlugin {
             val parentUnwrapped = KotlinConverter.unwrapElements(parent) ?: return null
             val convertedParent = convertElementWithParent(parentUnwrapped, null)
             return when (convertedParent) {
-                is UAnnotation -> tryParentAsAnnotationArgument(parent, convertedParent) ?: convertedParent
+                is UAnnotation -> tryParentAsAnnotationArgument(parent, convertedParent).also {
+                    println("tryParentAsAnnotationArgument($parent) = $it")
+                } ?: convertedParent
                 else -> convertedParent
             }
         }
